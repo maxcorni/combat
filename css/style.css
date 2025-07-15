@@ -1,0 +1,288 @@
+/* Reset de base */
+body, h1, h2, h3, ul, li, p, form, input, label, fieldset, legend, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #142940;
+    background-size: cover;
+    color: #f0f0f0;
+    min-height: 100vh;
+}
+
+header, nav {
+    background: rgba(30, 34, 44, 0.95);
+    padding: 1em 0;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    gap: 2em;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    font-size: 1.1em;
+}
+
+nav a.button, .button {
+    background: #3b82f6;
+    color: #fff;
+    padding: 0.5em 1.2em;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+nav a.button:hover, .button:hover {
+    background: #2563eb;
+}
+
+.container {
+    background: rgba(34, 39, 54, 0.92);
+    margin: 6rem auto;
+    padding: 2em 2.5em;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+form {
+    background: rgba(44, 49, 64, 0.85);
+    padding: 2em 2.5em;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    min-width: 280px;
+    max-width: calc(100% - 2em);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+}
+
+input[type="text"], input[type="password"], input[type="number"] {
+    padding: 0.5em;
+    border: 1px solid #3b82f6;
+    border-radius: 4px;
+    background: #23272f;
+    color: #f0f0f0;
+    margin-top: 0.3em;
+}
+
+input[type="submit"], button {
+    margin-top: 0.5em;
+}
+
+fieldset {
+    border: 1px solid #3b82f6;
+    border-radius: 6px;
+    padding: 1em;
+    margin-bottom: 1em;
+    background: rgba(34, 39, 54, 0.7);
+}
+
+legend {
+    font-weight: bold;
+    color: #3b82f6;
+}
+
+ul {
+    list-style: none;
+    margin: 1em 0;
+    padding: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+}
+
+th, td {
+    padding: 0.5em;
+    text-align: center;
+}
+
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: top;
+    gap: 1em;
+}
+
+.col{
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.stats, .enemies, .combat-result {
+    margin: 1.5em 0;
+    padding: 1em;
+    background: rgba(44, 49, 64, 0.85);
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    flex: 1;    
+}
+
+.combat-result {
+    color: #fbbf24;
+    font-weight: bold;
+    min-height: 2em;
+}
+
+#stats-message {
+    color: #f87171;
+    font-size: 1em;
+    margin-top: 0.5em;
+}
+
+.stats-title {
+    font-size: 1.3em;
+    color: #60a5fa;
+    margin-bottom: 0.5em;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.stats-info {
+    font-size: 0.95em;
+    color: #a5b4fc;
+    text-align: center;
+    margin-bottom: 0.3em;
+}
+
+.stats-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 0.7em;
+    flex-wrap: wrap;
+}
+
+.stats-label {
+    font-weight: bold;
+    color: #fbbf24;
+    margin-right: 0.5em;
+    min-width: 110px;
+}
+
+.stats-value {
+    color: #38bdf8;
+    font-weight: bold;
+    margin-left: 0.3em;
+}
+
+.stats-btn {
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3em 0.8em;
+    font-size: 1em;
+    margin-left: 0.2em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+.stats-btn:hover {
+    background: #2563eb;
+    transform: scale(1.08);
+}
+
+
+.background-image {
+    position: absolute;
+    top: 70px; /* hauteur estimée du header, à ajuster si besoin */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 70px); /* prend toute la hauteur sauf le header */
+    object-fit: cover;
+    object-position: left center;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.colonne-right {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 50vw;
+    height: calc(100% - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.action{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    margin-bottom: 1em;
+}
+
+
+@media (max-width: 800px) {
+    .container {
+        padding: 1em;
+    }
+    form {
+        padding: 1em;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .colonne-right {
+        position: static;
+        width: 100vw;
+        height: auto;
+        background: rgba(34, 39, 54, 0.40);
+        box-shadow: none;
+        justify-content: flex-start;
+        padding: 2em 0;
+    }
+    .connexion-form {
+        margin: 2em auto;
+        background: rgba(44, 49, 64, 0.70);
+        min-width: unset;
+        max-width: 95vw;
+    }
+
+    .stats-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3em;
+    }
+    .stats-label {
+        min-width: unset;
+    }
+}
+
